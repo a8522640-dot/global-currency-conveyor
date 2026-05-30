@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мировой конвертер валют PRO</title>
+    <link rel="stylesheet" href="проект.css">
+</head>
+<link rel="manifest" href="manifest.json">
+<body class="dark-theme"> <div class="converter-container">
+        <div class="header-row">
+            <h2>Мировой конвертер сома</h2>
+            <button id="theme-toggle" class="theme-btn">☀️ Светлая тема</button>
+        </div>
+        <p class="subtitle">Актуальные курсы валют с автоматическим обновлением</p>
+
+        <div class="base-input-group">
+            <img src="https://flagcdn.com/w40/kg.png" alt="Кыргызстан" class="base-flag">
+            <span class="currency-label">KGS (с)</span>
+            <div class="input-wrapper">
+                <input type="number" id="kgs-input" value="1000" placeholder="0.00">
+                <button id="clear-btn" class="clear-input-btn">&times;</button>
+            </div>
+        </div>
+
+        <div class="search-group">
+            <input type="text" id="search-input" placeholder="🔍 Быстрый поиск по названию валюты или страны...">
+        </div>
+
+        <div class="currency-grid" id="currencies-container">
+            <div class="loading">Загрузка актуальных курсов и флагов...</div>
+        </div>
+    </div>
+
+    <script src="проетк.js"></script>
+</body>
+</html>

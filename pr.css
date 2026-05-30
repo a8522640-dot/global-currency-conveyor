@@ -1,0 +1,227 @@
+:root {
+    /* Темная тема (по умолчанию) */
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --primary-color: #10b981;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --input-bg: #0f172a;
+}
+
+/* Стили для светлой темы */
+body.light-theme {
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --primary-color: #059669;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --input-bg: #f8fafc;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.converter-container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+    transition: background 0.3s;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--primary-color);
+}
+
+.theme-btn {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* Поле ввода */
+.base-input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    background-color: var(--input-bg);
+}
+
+.base-flag {
+    width: 32px;
+    height: auto;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+.currency-label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.input-wrapper input {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    width: 100%;
+    outline: none;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Кнопка очистки */
+.clear-input-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+.clear-input-btn:hover {
+    color: #ef4444;
+}
+
+/* Поиск */
+.search-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.search-group input:focus {
+    border-color: var(--primary-color);
+}
+
+/* Сетка карточек */
+.currency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.currency-grid::-webkit-scrollbar {
+    width: 6px;
+}
+.currency-grid::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .currency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Карточка валюты */
+.currency-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.currency-card:hover {
+    transform: translateY(-2px);
+    background: var(--input-bg);
+}
+
+/* Выделение избранных валют (небольшая плашка слева) */
+.currency-card.favorite {
+    border-left: 4px solid var(--primary-color);
+}
+
+.img-flag {
+    width: 40px;
+    height: 26px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.currency-code {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.converted-val {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.loading {
+    grid-column: span 2;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 20px;
+}
